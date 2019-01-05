@@ -3,11 +3,9 @@ package com.learning.springbootfirstapp.Controller;
 import com.learning.springbootfirstapp.Entity.Student;
 import com.learning.springbootfirstapp.Service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.awt.*;
 import java.util.Map;
 
 @RestController
@@ -27,4 +25,18 @@ public class StudentController {
         return studentService.getStudentById(sid);
     }
 
+    @RequestMapping(value = "/{sid}", method = RequestMethod.DELETE)
+    public Student deleteStudentById(@PathVariable int sid){
+        return studentService.deleteStudentById(sid);
+    }
+
+    @RequestMapping(method = RequestMethod.PUT)
+    public Student updateStudent(@RequestBody Student student){
+        return studentService.updateStudent(student);
+    }
+
+    @RequestMapping(method = RequestMethod.POST)
+    public Student insertStudent(@RequestBody Student student){
+        return studentService.insertStudent(student);
+    }
 }

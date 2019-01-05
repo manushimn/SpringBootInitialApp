@@ -20,4 +20,16 @@ public class StudentService {
     public Student getStudentById(int sid){
         return studentDao.getStudentById(sid);
     }
+
+    public Student deleteStudentById(int sid) {
+        return studentDao.deleteStudentById(sid);
+    }
+
+    public Student updateStudent(Student student) {
+        return studentDao.updateStudent(student);
+    }
+
+    public Student insertStudent(Student student) {
+        return studentDao.insertStudent(student);
+    }
 }

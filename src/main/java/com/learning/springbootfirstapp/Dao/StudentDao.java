@@ -16,6 +16,9 @@ public class StudentDao {
             {
                 put(1, new Student(1, "Manushi", "Maths"));
                 put(2, new Student(2, "Hasanka", "Physics"));
+                put(3, new Student(3, "dfd", "Physidgdgdsgcs"));
+                put(4, new Student(4, "Hasfdfanka", "Phydfgdssics"));
+                put(5, new Student(5, "Hadfdfdsanka", "Phgsdfgdgysics"));
             }
         };
     }
@@ -26,5 +29,20 @@ public class StudentDao {
 
     public Student getStudentById(int sid){
         return students.get(sid);
+    }
+
+    public Student deleteStudentById(int sid) {
+        return students.remove(sid);
+    }
+
+    public Student updateStudent(Student updatedStudent) {
+        students.put(updatedStudent.getSid(), updatedStudent);
+        return updatedStudent;
+
+    }
+
+    public Student insertStudent(Student student) {
+        students.put(student.getSid(), student);
+        return student;
     }
 }
