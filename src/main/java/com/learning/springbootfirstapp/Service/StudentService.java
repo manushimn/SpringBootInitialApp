@@ -12,7 +12,7 @@ import java.util.Map;
 public class StudentService {
 
     @Autowired
-    @Qualifier("MongoData")
+    @Qualifier("FakeData")
     /*Since there are 2 StudentDao implementation, qualifier is needed to specify which implementation should be used by the service.
     i.e. StudentDao studentDao = new FaksStudentDaoImpl()
          StudentDao studentDao = new MongoStudentDaoImpl()
